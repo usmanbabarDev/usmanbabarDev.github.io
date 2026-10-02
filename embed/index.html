@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<script>(function(d){d.classList.add("js");try{var L=localStorage;if(L.getItem("hw-theme-v")!=="2"){L.removeItem("hw-theme");L.removeItem("hw-theme-until");L.setItem("hw-theme-v","2")}var u=+L.getItem("hw-theme-until");if(u&&Date.now()>u){L.removeItem("hw-theme");L.removeItem("hw-theme-until")}var t=L.getItem("hw-theme")||"time";if(t==="light"||t==="dark"){d.setAttribute("data-theme",t)}else if(t==="time"){var n=new Date(),s=JSON.parse(L.getItem("hw-sun")||"null"),k=n.toDateString(),dark=s&&s.d===k?(+n<s.r||+n>=s.s):(n.getHours()<7||n.getHours()>=19);d.setAttribute("data-theme",dark?"dark":"light")}}catch(e){}})(document.documentElement)</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halal E-number checker | HalalVerdict</title>
+<meta name="description" content="Embeddable halal E-number checker.">
+<link rel="canonical" href="https://usmanbabardev.github.io/embed/">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HalalVerdict">
+<meta property="og:title" content="Halal E-number checker | HalalVerdict">
+<meta property="og:description" content="Embeddable halal E-number checker.">
+<meta property="og:url" content="https://usmanbabardev.github.io/embed/">
+<meta property="og:image" content="https://usmanbabardev.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d6b4f" data-theme-color>
+<meta name="color-scheme" content="light dark">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=muqrln3t">
+
+</head>
+<body class="embed">
+
+
+<main id="main"><div class="embed-box">
+<form class="search" action="/search/" role="search" data-search>
+  <label class="sr-only" for="q-embed">Search an E-number or ingredient</label>
+  <input id="q-embed" name="q" type="search" autocomplete="off" placeholder="Try E471, gelatine, whey…" data-search-input>
+  <button type="button" class="mic-btn" data-voice aria-label="Search by voice" title="Search by voice" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1a7 7 0 0 0 6-6.9h-2Z"/></svg></button>
+  <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M10 3a7 7 0 0 1 5.6 11.2l4.6 4.6-1.4 1.4-4.6-4.6A7 7 0 1 1 10 3Zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg></button>
+  <ul class="suggest" role="listbox" hidden data-suggest></ul>
+</form><p class="tiny"><a href="/" target="_blank" rel="noopener">HalalVerdict</a> · halal, doubtful or haram in one search</p></div></main>
+
+<script src="/assets/app.js?v=muqrln3t" defer></script>
+
+
+</body>
+</html>

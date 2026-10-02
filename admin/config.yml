@@ -1,0 +1,94 @@
+# Blog manager settings (Sveltia CMS). Open /admin/ on the site to use it.
+#
+# Online: sign in with a GitHub token. Saving a post commits it to the repo
+#         below, and Cloudflare Pages rebuilds the site automatically.
+# Laptop: run `npm run dev`, open http://localhost:4321/admin/ in Chrome or
+#         Edge, choose "Work with Local Repository" and pick the project folder.
+
+backend:
+  name: github
+  repo: usmanbabarDev/halalverdict   # private repo — team members need write access
+  branch: main
+
+site_url: https://halalverdict.com
+display_url: https://halalverdict.com
+logo_url: /icon.svg
+
+# Images uploaded in the editor are saved here and served from /media/.
+media_folder: content/media
+public_folder: /media
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    description: Posts appear at /blog/ after the site rebuilds. Tick "Draft" to hide a post. SEO scores and topic ideas: open /admin/seo/ in a new tab.
+    folder: content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} · {{date}}"
+    sortable_fields: [date, title, category]
+    preview_path: blog/{{slug}}/
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: Write it like the question people search for, e.g. "Is Haribo Halal in the UK?"
+      - label: Description
+        name: description
+        widget: text
+        hint: One or two sentences (about 150 characters). Shown on Google and on the blog cards.
+      - label: Category
+        name: category
+        widget: select
+        options: [How-to, Ingredients, E-numbers, Certification, Shopping]
+        default: Ingredients
+      - label: Date
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        time_format: false
+        hint: Newest posts appear first.
+      - label: Emoji
+        name: emoji
+        widget: string
+        required: false
+        hint: One emoji for the colourful cover, e.g. 🍬 🧀 🍗. Used when there's no cover image.
+      - label: Cover image
+        name: cover
+        widget: image
+        required: false
+        hint: Optional. A wide photo (about 1200×630) replaces the emoji cover.
+      - label: Cover image description (alt text)
+        name: coverAlt
+        widget: string
+        required: false
+        hint: Describe the photo in one short sentence — helps Google Images and screen readers.
+      - label: Photo credit
+        name: coverCredit
+        widget: string
+        required: false
+        hint: Photographer or source, if the licence requires credit (e.g. Wikimedia Commons, Unsplash).
+      - label: Photo licence
+        name: coverLicense
+        widget: string
+        required: false
+        hint: e.g. CC BY-SA 4.0, CC0, Unsplash Licence. Only use photos you are allowed to use.
+      - label: Featured
+        name: featured
+        widget: boolean
+        default: false
+        required: false
+        hint: Shows this post large at the top of the blog. Tick it on one post at a time.
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+        hint: Drafts are saved but not published on the site.
+      - label: Body
+        name: body
+        widget: markdown
+        hint: Use headings (##), lists and links. Link to checker pages like /e-numbers/e471/ or /ingredients/gelatine/.
